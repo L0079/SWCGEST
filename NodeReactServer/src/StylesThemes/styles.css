@@ -1,0 +1,763 @@
+@use "@material/drawer";
+@use "@material/list";
+
+@include drawer.core-styles;
+@include list.core-styles;
+
+body {
+  margin: 0;
+  font-family: 'Noto Serif', serif;
+  background-color: #F5F5F5;
+  background-image: url("escheresque.png");
+}
+
+h5 {
+  font-family: 'Noto Serif', serif;
+  font-size: 0.7rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/*-- heading --*/
+.heading {
+  padding: 5px 10px 5px 100px;
+  background-color: #3c3c3c;
+  color: white;
+  margin-left: 250px;
+}
+.heading h1 {
+  font-family: 'Noto Serif', serif;
+  letter-spacing: 4px;
+  font-size: 1.5rem;
+  font-style: normal;
+}
+
+.appName {
+  font-family: 'Noto Serif', serif;
+  letter-spacing: 10px;
+  font-size: 3.5rem;
+  font-style: normal;
+}
+
+/*-- Control Panel --*/
+.controlPanel{
+  background-color: black;
+  color: white;
+  float: left;
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  padding-top: 80px;
+  padding-left: 20px;
+}
+.cpElement {
+  display: flex;
+  align-items: center;
+}
+.cpElement p {
+margin-left: 5px;
+}
+
+.testa {
+  font-size: 1rem;
+  color: #3c3c3c;
+  float: left;
+  margin-right: 20px;
+  border: solid;
+  border-color: grey;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: whitesmoke;
+}
+.testa table {
+  background-color: #F5F5F5;
+}
+.formModify {
+  padding: 20px;
+}
+.formModify div {
+  padding: 15px;
+}
+
+.formModify input {
+  padding-left: 10px;
+  margin-left: 20px;
+  min-width: 300px;
+  float: right;
+}
+
+.formButtons {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 60px;
+  align-content: space-evenly;
+}
+
+.dbtableTitle {
+  padding: 5px 0 5px 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #3c3c3c;
+  color: white;
+}
+.dbtableTitle p {
+  max-width: 80%;
+}
+.dbtableTitle .MuiSvgIcon-root {
+  float: right;
+  vertical-align: top;
+  margin-right: 18px;
+  margin-top: -38px;
+
+}
+.dbtableTitleM {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  padding-left: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #3c3c3c;
+  color: white;
+}
+.dbtable {
+  font-size: 0.8rem;
+  color: #3c3c3c;
+  float: right;
+  margin-right: 40px;
+  background-color: #F5F5F5;
+}
+.dbtable th {
+  font-weight: bold;
+}
+
+/***
+.loadTable {
+  padding: 0 30px 30px 30px;
+  min-width: 500px;
+}
+.loadTableHead {
+  padding: 15px 0 15px 30px;
+  margin-bottom: 30px;
+  background-color: #3c3c3c;
+  color: white;
+  font-size: 1.5rem;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.loadTable button {
+  float: right;
+  margin: 30px;
+}
+.fileInput {
+  float: right;
+  vertical-align: bottom;
+  margin: 27px 30px 0 80px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.fileInput input {
+  margin-left: 15px;
+  width: 25em;
+  font-size: 16px;
+}
+.loadTable form {
+  float: right;
+  vertical-align: bottom;
+}
+****/
+.alertDialog {
+  background-color: #3c3c3c;
+  color: white;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+/*----------------------------------------------------------------------------------------------------------------------------*
+ *    DASHBOARDS 6 GRAPHS                                                                                                     *
+ *----------------------------------------------------------------------------------------------------------------------------*/
+ .accordionTitle {
+  display: flex;
+  align-items: center;
+ }
+ .accordionTitle h3 {
+   margin-left: 20px;
+ }
+
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+.menuTitle  {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  align-content: space-around;
+  letter-spacing: 3px;
+  color: #3c3c3c;
+}
+
+.LogIN {
+  vertical-align: middle;
+  text-align: center;
+  padding: 30px;
+  margin-top: 150px;
+}
+.LogIN button {
+  margin-top: 30px;
+}
+.LogIN h1 {
+  font-family: 'Noto Serif', serif;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 0;
+  font-size: 2rem;
+  letter-spacing: 4px;
+}
+
+.toolBarUser {
+  display: grid;
+  grid-template-columns: auto 180px;
+  align-content: space-around;
+}
+.toolBarUserInfo {
+  display: grid;
+  grid-template-columns: 30px auto;
+  align-content: space-around;
+}
+.logOut {
+  margin-top: 60px;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*      MUI                                                                                                                  */
+/*---------------------------------------------------------------------------------------------------------------------------*/
+.MuiButton-label p {
+  padding: 0 10px 0 10px;
+  margin: 0;
+}
+
+.MuiDialogContent-root {
+  background-color: #F5F5F5;
+  color: #3c3c3c;
+}
+.MuiDialogActions-root {
+  background-color: #F5F5F5;
+  color: #3c3c3c;
+}
+.MuiGridListTile-root {
+  height: 35px;
+}
+
+.MuiDataGrid-columnHeader {
+      background-color: #707070;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: bold;
+}
+
+.MuiDataGrid-withColumnMenu {
+  color: white;
+}
+
+.MuiDataGrid-menuIcon {
+  color: white;
+}
+
+.MuiDataGrid-sortIcon {
+  color: white;
+}
+
+.MuiDataGrid-columnSeparator {
+  background-color: #707070;
+}
+.MuiDataGrid-columnHeaderWrapper {
+  background-color: #707070;
+}
+.react-grid-Container {
+  outline: none;
+}
+
+/*----------------------------- SWCGEST -------------------------------------------*/
+/*--------------- CUSTOMERS ---------------*/
+.ccard{
+  height: 45vw;
+}
+.cweb{
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+.cempNum{
+  margin-left: 5px;
+  margin-bottom: 8px;
+  width: 140px;
+}
+.cturn{
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
+.leftMargin8{
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+.cname{
+  margin-left: 39px;
+  margin-bottom: 8px;
+}
+.cvat{
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+.csdi{
+  margin-left: 18px;
+  margin-bottom: 8px;
+}
+.cpec{
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+.cselLabel {
+  vertical-align: super;
+}
+.cselOptInd {
+  margin-top: -12px;
+  margin-left: 22px;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  width: 180px;
+}
+.cselOptMark {
+  margin-left: 33px;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  width: 180px;
+}
+.cselOptTerr {
+  margin-left: 15px;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  width: 180px;
+}
+.cpremise{
+  margin-left: 39px;
+  margin-bottom: 8px;
+}
+.cstreet {
+  margin-left: 30px;
+  margin-bottom: 8px;
+}
+.ccity{
+  margin-left: 49px;
+  margin-bottom: 8px;
+}
+.ctelephone{
+  margin-left: 5px;
+  margin-bottom: 8px;
+}
+.czip{
+  margin-left: 67px;
+  margin-bottom: 8px;
+  width: 50px;
+}
+.cselC{
+  margin-left: 56px;
+  margin-bottom: 8px;
+  width: 180px;
+}
+.cselCC {
+  margin-left: 15px;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  width: 80px;
+}
+.csearch {
+  float: right;
+  float: top;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+}
+
+.pdselCC {
+  margin-top: -13px;
+  margin-left: 15px;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  width: 80px;
+}
+/*-----------------------------------------*/
+.ccancel{
+  float: left;
+  margin-left: 50px;
+}
+.csubmit{
+  float: left;
+  margin-left: 50px;
+}
+
+/*--------------- CONTACTS ----------------*/
+.coname{
+  margin-left: 39px;
+  margin-bottom: 8px;
+}
+.cosurname {
+  margin-left: 12px;
+  margin-bottom: 8px;
+}
+.corole{
+  margin-left: 40px;
+  margin-bottom: 8px;
+}
+.cotelephone {
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
+.comobile{
+  margin-left: 39px;
+  margin-bottom: 8px;
+}
+.cocancel{
+  float: right;
+  margin-right: 50px;
+}
+.cosubmit{
+  float: left;
+  margin-left: 50px;
+}
+.cselOptCust {
+  margin-left: 15px;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  width: 180px;
+}
+.cselOptPrem {
+  margin-left: 30px;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  width: 180px;
+}
+/*-----------------------------------------*/
+.cAddContact {
+  vertical-align: bottom;
+  margin-left: 30px;
+}
+.cAddPremise {
+  vertical-align: bottom;
+  margin-left: 30px;
+}
+/*-----------------------------------------*/
+.cAddCustomer {
+  vertical-align: bottom;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+/*-----------------------------------------*/
+.coAddContact {
+  vertical-align: bottom;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+/*------------------------------------------------------------------------------*/
+.ocontainer {
+  min-height: 600px;
+  min-width: 100vh;
+}
+.oamount {
+  margin-top: 60px;
+  margin-bottom: 8px;
+}
+.odivfcst {
+  margin-bottom: 8px;
+}
+.ospacer1 {
+  margin-top: 0px;
+}
+.ospacer2 {
+  margin-top: 10px;
+}
+.ospacer3 {
+  margin-top: 30px;
+}
+.oname{
+  margin-left: 55px;
+  margin-bottom: 8px;
+}
+.oselOptCust {
+  margin-left: 50px;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  width: 180px;
+}
+.oselOptFCust {
+  margin-left: 15px;
+  margin-bottom: 18px;
+  font-size: 0.7rem;
+  width: 180px;
+}
+.oselOptCont {
+  margin-left: 60px;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  width: 180px;
+}
+.ocdate {
+  font-family: 'Noto Serif', serif;
+  font-size: 0.7rem;
+  margin-left: 108px;
+  margin-bottom: 8px;
+  width: 210px;
+}
+.oselAssTo {
+  margin-left: 16px;
+  margin-bottom: 18px;
+  width: 210px;
+}
+.oselPM {
+  margin-left: 86px;
+  margin-bottom: 8px;
+  width: 210px;
+}
+.oselOptWin {
+  margin-left: 42px;
+  margin-bottom: 8px;
+  width: 180px;
+}
+.oselOptBU {
+  margin-left: 42px;
+  margin-bottom: 8px;
+  width: 198px;
+}
+.otechbd {
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+.oselOptBU {
+  margin-left: 16px;
+  margin-bottom: 21px;
+  width: 180px;
+}
+.ofullwidth {
+  width: 100%;
+  height: 50px;
+  box-sizing: inherit;
+}
+.otamount {
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+.ofcst1 {
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+.ofcst2 {
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+.ofcst3 {
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+
+/*-----------------------------------------*/
+.oAddOpportunity {
+  vertical-align: bottom;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.osearch {
+  float: right;
+  float: top;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+}
+.ocard {
+  height: 45vw;
+}
+.osubmit {
+  float: left;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.ocancel {
+  float: left;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.otoEstimate {
+  float: left;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+/*-----------------------------------------*/
+.ecustomer {
+  display: inline-flex;
+  margin-top: 30px;
+  width: 100%;
+}
+.efcustomer {
+  margin-top: 28px;
+  display: inline-flex;
+}
+.efcontact {
+  margin-top: 13px;
+  display: inline-flex;
+}
+.elm1 {
+  margin-left: 50px;
+}
+.elm2 {
+  margin-left: 15px;
+}
+.espacer1 {
+  margin-top: 16px;
+}
+.espacer2 {
+  margin-top: 90px;
+}
+.eselAssTo {
+  margin-left: 16px;
+  margin-bottom: 16px;
+  width: 210px;
+}
+.eselPM {
+  margin-left: 86px;
+  margin-bottom: 8px;
+  width: 210px;
+}
+.eselOptBU {
+  margin-top: 7px;
+  margin-left: 16px;
+  margin-bottom: 21px;
+  width: 180px;
+}
+.eamount {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: inline-flex;
+}
+.etamount {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+.edivfcst {
+  margin-bottom: 25px;
+  display: inline-flex;
+  width: 100%;
+}
+.edivfcst p {
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-right: 15px;
+}
+.etfcst { 
+  vertical-align: middle;
+}
+.etfcst p {
+  margin-left: 15px;
+}
+.efullwidth {
+  width: 100%;
+  height: 50px;
+  box-sizing: inherit;
+  margin-bottom: 40px;
+}
+.edivider {
+  height: 5px;
+  margin-top: 80px;
+}
+.ecancel{
+  float: right;
+  margin-right: 50px;
+}
+.esubmit{
+  float: left;
+  margin-left: 50px;
+}
+.econtainer {
+  min-height: 1500px;
+  min-width: 100vh;
+}
+.eaddItem {
+  display: inline-flex;
+  width: 95%;
+  margin-left: 30px;
+}
+.eitemsTable {
+  min-width: 15%;
+}
+.eselOptItem {
+  min-width: 100px;
+  margin-right: 10px;
+}
+.eiqta {
+  max-width: 80px;
+  margin-right: 10px;
+}
+.eiuprice {
+  max-width: 150px;
+  margin-right: 10px;
+}
+.eiprice {
+  max-width: 150px;
+  margin-right: 10px;
+}
+.etotals {
+  display: inline-flex;
+  float: left;
+  margin-left: 15px;
+  font-weight: bold;
+}
+.etotals p {
+  margin: 0;
+}
+.etotals1 {
+  display: grid;
+  float: left;
+  margin-left: 15px;
+}
+.etotals2 {
+  display: grid;
+  float: left;
+  margin-left: 15px;
+}
+.eremoveItem {
+  outline: none;
+}
+.showAddItem {
+  margin-top: 150px;
+  display: grid;
+}
+.eadditems1 {
+  display: inline-flex;
+  vertical-align: bottom;
+}
+.eadditems2 {
+  display: none;
+  vertical-align: bottom;
+}
+.eadditems {
+  display: none;
+}
+
+
+.showAddPS {
+  margin-top: 20px;
+  display: grid;
+}
+.eaddps1 {
+  display: inline-flex;
+  vertical-align: bottom;
+}
+.eaddps2 {
+  display: none;
+  vertical-align: bottom;
+}
+.eaddPSs {
+  display: none;
+}
+.epssTable {
+
+}
+.eaddps {
+
+}
